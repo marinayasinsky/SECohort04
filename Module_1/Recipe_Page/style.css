@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    font-size: larger;
+    color: rgb(79, 55, 55);
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    outline-color: black;
+    outline: solid;
+    background-color: rgb(224, 245, 213);
+}
+
+body {
+    background-color: rgb(240, 247, 202);
+    font-size: 20px;
+    font-family: Helvetica, sans-serif;
+    line-height: 1.8;
+    min-height: 100vh;
+    margin: 20px;
+  }
+
+  p {
+
+  }
+
+  img {
+    margin-top: 50px;
+    padding: 2px;
+    margin-left: 10px;
+    width: 400px;
+    outline-color: rgb(169, 156, 156);
+    outline: solid rgb(247, 224, 224);
+  }
+
+  #description {
+    text-align: center;
+    margin-top: 50px;
+    top: 250px;
+    font-size: 15px;
+  }
+
+  #ingredients {
+    margin-top: 50px;
+    top: 250px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  #method {
+    font-size: 10px;
+  }
+
+  .div1 {
+    width: 300px;
+    height: 200px;
+    border: solid 2px red;
+  }
+
+  .div2 {
+    width: 300px;
+    height: 200px;
+    border: solid 2px green;
+    margin: 10px;
+  }
+
+  .div1 p {
+    font-size: 12px;
+    height: auto;
+    text-align: center;
+  }
+  
+  .div2 p {
+    font-size: 12px;
+    height: auto;
+    text-align: center;
+  }

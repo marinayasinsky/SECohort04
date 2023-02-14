@@ -1,0 +1,43 @@
+div {
+    width: 200px;
+}
+
+img {
+    width: 200px;
+}
+
+img:hover { 
+    rotate: 10deg;
+    transition: all 0.5s ease;
+}
+
+p {
+    padding: 20px;
+    animation-name: demo-anime;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes demo-anime {
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: blue;
+    }
+}
+
+@keyframes demo-anime {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: blue;
+    }
+    75% {
+        background-color: yellow;
+    }
+    25% {
+        background-color: purple;
+    }
+}
