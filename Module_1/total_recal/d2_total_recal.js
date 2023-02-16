@@ -23,14 +23,14 @@
 
 
 // for (let i =0; i<=100; i++){
-//     if ( i % 3 ==0 && i % 5 == 0) {
+//     if ( i % 3 === 0 && i % 5 === 0) {
 //         console.log("FizzBuzz");
 //     } else if ( i % 3 === 0) {
 //         console.log("Fizz");
 //     } else if ( i % 5 === 0) {
 //         console.log("Buzz");
 //     } else {
-//         console.log("FizzBuzz");
+//         console.log(i);
 //     }
 // }
 ////////////////////////////////
@@ -119,26 +119,61 @@
 // console.log("Methods Revisited answered")
 
 //* Where is Waldo
-const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
-                    ["Lucinda", "Jacc", "Neff", "Snoop"],
-                    ["Petunia", ["Baked Goods", "Waldo"]]];
+// const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
+//                     ["Lucinda", "Jacc", "Neff", "Snoop"],
+//                     ["Petunia", ["Baked Goods", "Waldo"]]];
 
 
 
 //Remove Eggbert (hint look at the slice/splice method(s))
-whereIsWaldo.slice(whereIsWaldo.indexOf("Eggbert"),1); 
-// Change "Neff" to "No One"
-// Access and console.log "Waldo"
-
-console.log (whereIsWaldo[0]);//[ 'Timmy', 'Frank' ]
-console.log (whereIsWaldo[1]);//Eggbert
-console.log (whereIsWaldo[2]);//[ 'Lucinda', 'Jacc', 'Neff', 'Snoop' ]
-console.log (whereIsWaldo[3]);//[ 'Petunia', [ 'Baked Goods', 'Waldo' ] ]
+// whereIsWaldo.splice(1,1);
+// // Change "Neff" to "No One"
+// whereIsWaldo[1][2] = "No One";
+// // Access and console.log "Waldo"
+// console.log(whereIsWaldo);
+// console.log (whereIsWaldo[2][1][1]);
 
 //*  Excited Kitten
-////////////////////////////////
+//Write code that logs "Love me, pet me! HSSSSSS!" 20 times.
+// For every even number in your loop, log "...human...why you taking pictures of me?...", "...the catnip made me do it...", or "...why does the red dot always get away..." at random.
+
+// const kittyTalk = ["...human...why you taking pictures of me?...", "...the catnip made me do it...", "...why does the red dot always get away..." ];
+// let meow = 0;
+// for (let i = 0; i <= 20; i++)
+// { if( i%2 == 0) {
+//     meow = Math.floor(Math.random() * 3) ;
+//     console.log (kittyTalk[meow]);
+// }
+// else 
+//     console.log ( "Love me, pet me! HSSSSSS!");
+
+// }
 
 
-////////////////////////////////
 //*  Find the Median
-////////////////////////////////
+//Find the median number in the following numsarray, then console.log that number.
+// hint if you check the length of the array / 2, you might get not get a whole number. In which case, look into Math.floor( // something )
+
+const nums = [14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,18,12,17,12,71,18,15,12];
+
+
+// arr is a keyword recognized by js
+function median(arr) {
+    // step 1: sort our array in ascending order 
+    arr.sort();
+    // finding th emiddle index
+    const middleIndex = arr.length / 2;
+    // if add, return middle element
+    if(arr.lenght % 2 !== 0) {
+     return arr[ Math.floor(middleIndex)];
+    }
+    return (arr[middleIndex - 1] + arr[middleIndex] / 2);
+}
+
+console.log(median(nums));
+
+
+
+
+
+
