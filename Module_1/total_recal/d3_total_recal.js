@@ -15,7 +15,7 @@ class Hamster {
     }
   }
 
-console.log("created hamster class");
+
 
 class Person {
     constructor(name){
@@ -61,8 +61,9 @@ class Person {
 
     }
 }
-console.log("created person class");
 
-class newPerson {
-    constructor
+
+const timmy = new Person('Timmy')
+for(let i =0; i < 5; i++){
+  timmy.ageUp()
 }
