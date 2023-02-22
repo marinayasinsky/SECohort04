@@ -52,3 +52,71 @@ console.log(a);
 console.log(topMenuEl);
 console.log(mainEl);
 console.dir(mainEl);
+
+// 4.0 Select and cache the <nav id="sub-menu">element in a variable named subMenuEl.
+const subMenuEl = document.getElementById("sub-menu");
+
+//4.1 Set the height subMenuElelement to be 100%.
+subMenuEl.style.height = "100%";
+
+//4.2 Set the background color of subMenuElto the value stored in the --sub-menu-bgCSS custom property
+subMenuEl.style.backgroundColor = "var(--sub-menu-bg)";
+
+//4.3 Add the class of flex-aroundto the subMenuElelement.
+subMenuEl.classList.add("flex-around");
+
+//4.4 Set the CSS positionproperty of subMenuElto the value of absolute.
+subMenuEl.style.position = "absolute";
+
+// //4.5 Set the CSS top property of subMenuElto the value of 0.
+subMenuEl.style.top = "0";
+
+//5.0 Update the menuLinksarray in script.js to this:
+
+var menuLinks = [
+  {text: 'about', href: '/about'},
+  {text: 'catalog', href: '#', subLinks: [
+    {text: 'all', href: '/catalog/all'},
+    {text: 'top selling', href: '/catalog/top'},
+    {text: 'search', href: '/catalog/search'},
+  ]},
+  {text: 'orders', href: '#' , subLinks: [
+    {text: 'new', href: '/orders/new'},
+    {text: 'pending', href: '/orders/pending'},
+    {text: 'history', href: '/orders/history'},
+  ]},
+  {text: 'account', href: '#', subLinks: [
+    {text: 'profile', href: '/account/profile'},
+    {text: 'sign out', href: '/account/signout'},
+  ]},
+];
+
+//5.1 Select and cache the all of the <a>elements inside of topMenuElin a variable named topMenuLinks.
+const topMenuLinks = topMenuEl.querySelectorAll("a");
+//Declare a global showingSubMenuvariable and initialize it to false;
+// let showingSubMenu = false;
+
+//5.2 Attach a delegated 'click' event listener to topMenuEl.
+topMenuEl.addEventListener("click", (event) => {
+  //The first line of code of the event listener function should call the event object's preventDefault()method.
+  event.preventDefault();
+  //The second line of code function should immediately return if the element clicked was not an <a>elemen
+  if (event.target.tagName !== "A") {
+    return;
+  }
+  //console.log the content of the <a>to verify the handler is working.
+  console.log(event.target.textContent); 
+})
+
+// Task 5.3
+// Next in the event listener, if the clicked <a>link has a class of active:
+
+// Remove the activeclass from the clicked <a>element.
+// Set the showingSubMenuto false.
+// Set the CSS topproperty of subMenuElto 0.
+// returnto exit the handler.
+
+// console.log(subMenuEl);
+// console.log(topMenuLinks);
+
+
