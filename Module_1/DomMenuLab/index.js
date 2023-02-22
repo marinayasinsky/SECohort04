@@ -23,16 +23,32 @@ var menuLinks = [
     {text: 'orders', href: '/orders'},
     {text: 'account', href: '/account'},
   ];
-// 3.1 Iterate over the entire menuLinksarray and for each "link" object:
+// 3.1 Iterate over the entire menuLinks array and for each "link" object:
 //Create an <a>element.
 
-   for (let link of menuLinks) {
-    let newLink = document.createElement("a");
-    // On the new element, add an hrefattribute with its value set to the hrefproperty of the "link" object.
-    newLink.setAttribute("href", link.href);
-    //Set the new element's content to the value of the text property of the "link" object.
-    newLink.textContent = link.text;
-    // Append the new element to the topMenuEl element.
-    topMenuEl.append(newLink);
-   }
+//    for (let link of menuLinks) {
+//     let newLink = document.createElement("a");
+//     // On the new element, add an hrefattribute with its value set to the hrefproperty of the "link" object.
+//     newLink.setAttribute("href", link.href);
+//     //Set the new element's content to the value of the text property of the "link" object.
+//     newLink.textContent = link.text;
+//     // Append the new element to the topMenuEl element.
+//     topMenuEl.append(newLink);
+//    }
 
+menuLinks.forEach( obj => {
+
+    const a = document.createElement('a');
+   // On the new element, add an hrefattribute with its value set to the hrefproperty of the "link" object.
+    a.setAttribute('href', obj.href);
+    //Set the new element's content to the value of the text property of the "link" object.
+    a.textContent = obj.text;
+    // Append the new element to the topMenuEl element.
+    topMenuEl.appendChild(a);
+
+console.log(a);
+})
+
+console.log(topMenuEl);
+console.log(mainEl);
+console.dir(mainEl);
