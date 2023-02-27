@@ -106,17 +106,97 @@ topMenuEl.addEventListener("click", (event) => {
   }
   //console.log the content of the <a>to verify the handler is working.
   console.log(event.target.textContent); 
-})
 
-// Task 5.3
-// Next in the event listener, if the clicked <a>link has a class of active:
 
+// 5.3 Next in the event listener, if the clicked <a>link has a class of active:
 // Remove the activeclass from the clicked <a>element.
 // Set the showingSubMenuto false.
 // Set the CSS topproperty of subMenuElto 0.
 // returnto exit the handler.
 
-// console.log(subMenuEl);
-// console.log(topMenuLinks);
+if (event.target.classList.contains("active")) {
+  event.target.classList.contains("active");
+  showingSubMenu = false;
+  subMenuEl.style.top = "0";
+  return;
+}
+
+// 5.4 Next, the event listener should remove a class name of activefrom each <a>element in topMenuLinks- whether the activeclass exists or not.
+//Hint: Removing a non-existent class from an element does not cause an error, so just remove it!
+for ( let i = 0; i< topMenuLinks.length; i++) {
+  topMenuLinks[i].classList.remove("active");
+}
+
+//5.5 Next, the event listener should add a class name of activeto the <a>element that was clicked.
+event.target.classList.add("active");
+
+//5.6 Set showingSubMenuto trueif the clicked <a>element's "link" object within menuLinkshas a subLinksproperty (all do, except for the "link" object for ABOUT), otherwise, set it to false.
+//Hint: Saving the "link" object in a variable will come in handy for passing its subLinksarray in Task 5.7
+
+const anchorName = event.target.textContent;
+const menuLink = menuLinks.find((link) => {
+  return link.text === anchorName;
+});
+
+if (menuLink === undefined) {
+  return;
+}
+
+if (menuLink.sublinks) {
+  showingSubMenu = true;
+} else {
+  showingSubMenu = false;
+}
+
+//5.7 Task 5.7
+if (showingSubMenu) {
+  buildSubMenu(linkData.subLinks);
+  subMenuEl.style.top = '100%';
+} else {
+  subMenuEl.style.top = '0';
+  mainEl.innerHTML = '<h1>about</h1>';
+}
+});
+
+// Task 5.8
+function buildSubMenu(subLinks) {
+subMenuEl.innerHTML = '';
+subLinks.forEach(function(link) {
+  const linkEl = document.createElement('a');
+  linkEl.setAttribute('href', link.href);
+  linkEl.textContent = link.text;
+  subMenuEl.appendChild(linkEl);
+});
+}
+
+// Task 6.0
+subMenuEl.addEventListener('click', function(evt) {
+evt.preventDefault();
+const link = evt.target;
+if (link.tagName !== 'A') return;
+console.log(link.textContent);
+// Task 6.1
+showingSubMenu = false;
+subMenuEl.style.top = '0';
+// Task 6.2
+topMenuLinks.forEach(function(link) {
+  link.classList.remove('active');
+});
+// Task 6.3
+mainEl.innerHTML = `<h1>${link.textContent}</h1>`;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
